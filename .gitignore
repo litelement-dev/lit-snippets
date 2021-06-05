@@ -1,0 +1,4 @@
+.vscode/test.code-snippets
+node_modules
+.history
+*.vsix

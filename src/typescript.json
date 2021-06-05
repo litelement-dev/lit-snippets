@@ -1,0 +1,102 @@
+{
+  "Create LitElement Component": {
+    "prefix": "litbase",
+    "body": [
+      "import { LitElement, customElement } from 'lit-element';",
+      "",
+      "@customElement('${TM_FILENAME_BASE}')",
+      "export class ${TM_FILENAME_BASE/([a-z]*)(-)?/${1:/capitalize}/g} extends LitElement {",
+      "\t${0}",
+      "}",
+      ""
+    ],
+    "description": "New LitElement subclass"
+  },
+  "Create LitElement Component With lit-html": {
+    "prefix": "lit template",
+    "body": [
+      "import { LitElement, html, css } from 'lit';",
+      "import { customElement, property } from 'lit/decorators'",
+      "",
+      "@customElement('${TM_FILENAME_BASE}')",
+      "export class ${TM_FILENAME_BASE/([a-z]*)(-)?/${1:/capitalize}/g} extends LitElement {",
+      "",
+      "\tstatic styles = [css`",
+      "\t:host {",
+      "\t\tdisplay: block;",
+      "\t}",
+      "\t`;",
+      "]",
+      "",
+      "\trender() {",
+      "\t\treturn html`${0}`;",
+      "\t}",
+      "}",
+      ""
+    ],
+    "description": "New LitElement subclass with lit-html"
+  },
+
+  "Create @conectate/ct-lit Component": {
+    "prefix": "ctlit template",
+    "body": [
+		  "import { CtLit, html, css, customElement, property } from '@conectate/ct-lit';",
+		  "",
+		  "@customElement('${TM_FILENAME_BASE}')",
+		  "export class ${TM_FILENAME_BASE/([a-z]*)(-)?/${1:/capitalize}/g} extends CtLit {",
+		  "\tstatic styles = [",
+		  "\t\tcss`",
+		  "\t\t\t:host {",
+		  "\t\t\t\tdisplay: block;",
+		  "\t\t\t}",
+		  "\t\t`",
+		  "\t];",
+		  "",
+		  "\trender() {",
+		  "\t\treturn html`${0}`;",
+		  "\t}",
+		  "}",
+		  ""
+		],
+    "description": "New CtLit subclass"
+  },
+  "Generate LitElement Property": {
+    "prefix": [
+      "litprop"
+    ],
+    "body": [
+      "@property({ type: ${1|String,Number,Boolean,Array,Object|} }) ${2:propName}: ${3:any};${0}"
+    ],
+    "description": "Generate LitElement Property"
+  },
+  "Generate Element Query Property": {
+    "prefix": [
+      "litquery"
+    ],
+    "body": [
+      "@query('${1:queryString}') ${2:propName}: ${3:HTMLElement};${0}"
+    ],
+    "description": "Generate Element Query Property"
+  },
+  "Generate Elements Query Property": {
+    "prefix": [
+      "litqueryall"
+    ],
+    "body": [
+      "@queryAll('${1:queryString}') ${2:propName}: NodeListOf<${3:HTMLElement}>;${0}"
+    ],
+    "description": "Generate Elements Query Property"
+  },
+  "Generate Attribute Changed Callback": {
+    "prefix": [
+      "litattributechangedcallback"
+    ],
+    "body": [
+      "attributeChangedCallback(name: string, oldValue: string, newValue: string) {",
+      "\tsuper.attributeChangedCallback(name, oldValue, newValue);",
+      "\t${0}",
+      "}"
+    ],
+    "description": "Generate attributeChangedCallback(): Invoked when component attribute changes."
+  }
+}

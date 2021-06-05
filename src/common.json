@@ -1,0 +1,96 @@
+{
+  "Generate Render Function With lit-html": {
+    "prefix": [
+      "litrender",
+      "render"
+    ],
+    "body": [
+      "render() {",
+      "\treturn html`${0}`;",
+      "}"
+    ],
+    "description": "Generate render function with lit-html"
+  },
+  "Generate LitElement Static Styles": {
+    "prefix": [
+      "litstyles"
+    ],
+    "body": [
+      "static styles = [css`${0}`];"
+    ]
+  },
+  "Add New Event Listener": {
+    "prefix": ["addeventlistener"],
+    "body": [
+      "this.addEventListener('${1:eventName}', ${2:handler});${0}"
+    ]
+  },
+  "Dispatch Event": {
+    "prefix": [
+      "litdispatchevent",
+      "litfire",
+      "dispatchevent",
+      "fire"
+    ],
+    "body": [
+      "this.dispatchEvent(new CustomEvent('${1:eventName}', { detail: ${2:data}}));${0}"
+    ]
+  },
+  "Import Element": {
+    "prefix": [
+      "litimportele",
+      "importele"
+    ],
+    "body": [
+      "import '${0}';"
+    ]
+  },
+  "Generate Connected Callback": {
+    "prefix": [
+      "litconnectedcallback",
+      "connectedcallback"
+    ],
+    "body": [
+      "connectedCallback() {",
+      "\tsuper.connectedCallback();",
+      "\t${0}",
+      "}"
+    ],
+    "description": "Generate connectedCallback(): Invoked when a component is added to the document's DOM."
+  },
+  "Generate Disconnected Callback": {
+    "prefix": [
+      "litdisconnectedcallback",
+      "disconnectedcallback"
+    ],
+    "body": [
+      "disconnectedCallback() {",
+      "\tsuper.disconnectedCallback();",
+      "\t${0}",
+      "}"
+    ],
+    "description": "Generate disconnectedCallback(): Invoked when a component is removed from the document's DOM."
+  },
+  "Generate Adopted Callback": {
+    "prefix": [
+      "litadoptedcallback",
+      "adoptedcallback"
+    ],
+    "body": [
+      "adoptedCallback() {",
+      "\tsuper.adoptedCallback();",
+      "\t${0}",
+      "}"
+    ],
+    "description": "Generate adoptedCallback(): Invoked when a component is moved to a new document."
+  },
+  "Generate Observed Attributes": {
+    "prefix": [
+      "observedattributes"
+    ],
+    "body": [
+      "static get observedAttributes() { return ['${1:nameOfAttribute}']; }"
+    ],
+    "description": "Generate observedAttributes getter: Returns an array containing the names of the attributes you want to observe."
+  }
+}

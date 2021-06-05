@@ -1,0 +1,97 @@
+{
+  "Create LitElement Component": {
+    "prefix": "litbase",
+    "body": [
+      "import { LitElement } from 'lit';",
+      "",
+      "export class ${TM_FILENAME_BASE/([a-z]*)(-)?/${1:/capitalize}/g} extends LitElement {",
+      "\t${0}",
+      "}",
+      "customElements.define('${TM_FILENAME_BASE}', ${TM_FILENAME_BASE/([a-z]*)(-)?/${1:/capitalize}/g});",
+      ""
+    ],
+    "description": "New LitElement subclass"
+  },
+  "Create LitElement Component With lit-html": {
+    "prefix": "lit template",
+    "body": [
+      "import { LitElement, html, css } from 'lit';",
+      "",
+      "export class ${TM_FILENAME_BASE/([a-z]*)(-)?/${1:/capitalize}/g} extends LitElement {",
+      "",
+      "\tstatic styles = [css`",
+      "\t:host {",
+      "\t\tdisplay: block;",
+      "\t}",
+      "\t`;",
+      "]",
+      "\trender() {",
+      "\t\treturn html`${0}`;",
+      "\t}",
+      "}",
+      "customElements.define('${TM_FILENAME_BASE}', ${TM_FILENAME_BASE/([a-z]*)(-)?/${1:/capitalize}/g});",
+      ""
+    ],
+    "description": "New LitElement subclass"
+  },
+  "Generate LitElement Property in Javascript": {
+    "scope": "javascript",
+    "prefix": [
+      "property"
+    ],
+    "body": [
+      "${1:propName}: { type: ${2|String,Number,Boolean,Array,Object|} },${0}"
+    ],
+    "description": "Generate LitElement Property"
+  },
+  "Generate LitElement Properties": {
+    "prefix": [
+      "litprop",
+      "properties"
+    ],
+    "body": [
+      "static get properties() {",
+      "\treturn {",
+      "\t\t${1:propName}: { type: ${2|String,Number,Boolean,Array,Object|} },${0}",
+      "\t};",
+      "}"
+    ],
+    "description": "Generate LitElement Properties"
+  },
+  "Generate Element Query Property": {
+    "prefix": [
+      "litquery"
+    ],
+    "body": [
+      "get ${1:propName}() {",
+      "\treturn this.shadowRoot.querySelector('${2:queryString}');",
+      "}${0}"
+    ],
+    "description": "Generate Element Query Property"
+  },
+  "Generate Elements Query Property": {
+    "prefix": [
+      "litqueryall",
+      "queryall"
+    ],
+    "body": [
+      "get ${1:propName}() {",
+      "\treturn this.shadowRoot.querySelectorAll('${2:queryString}');",
+      "}${0}"
+    ],
+    "description": "Generate Elements Query Property"
+  },
+  "Generate Attribute Changed Callback": {
+    "prefix": [
+      "litattributechangedcallback",
+      "attributechangedcallback"
+    ],
+    "body": [
+      "attributeChangedCallback(name, oldValue, newValue) {",
+      "\tsuper.attributeChangedCallback(name, oldValue, newValue);",
+      "\t${0}",
+      "}"
+    ],
+    "description": "Generate attributeChangedCallback(): Invoked when component attribute changes."
+  }
+}

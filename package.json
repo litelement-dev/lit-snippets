@@ -1,0 +1,66 @@
+{
+    "name": "lit-snippets",
+    "version": "1.0.0",
+    "displayName": "Lit Snippets",
+    "description": "Lit Snippets for VS Code",
+    "categories": [
+        "Snippets"
+    ],
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "icon": "images/icon.png",
+    "galleryBanner": {
+        "color": "#283197",
+        "theme": "dark"
+    },
+    "contributors": [
+        {
+            "name": "Herberth Obregón",
+            "email": "herberthobregon@gmail.com",
+            "url": "http://twitter.com/herberthobregon"
+        }
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./src/common.json"
+            },
+            {
+                "language": "typescript",
+                "path": "./src/common.json"
+            },
+            {
+                "language": "javascript",
+                "path": "./src/javascript.json"
+            },
+            {
+                "language": "typescript",
+                "path": "./src/typescript.json"
+            }
+        ]
+    },
+    "keywords": [
+        "lit",
+        "litelement",
+        "snippets"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/litelement-dev/lit-snippets"
+    },
+    "author": "https://litelement.dev",
+    "publisher": "lit",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/litelement-dev/lit-snippets/issues"
+    },
+    "homepage": "https://github.com/litelement-dev/lit-snippets#readme",
+    "devDependencies": {
+        "vsce": "^1.92.0"
+    },
+    "scripts": {
+        "dist": "vsce publish"
+    }
+}
