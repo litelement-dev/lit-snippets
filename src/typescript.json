@@ -16,7 +16,7 @@
     "prefix": "lit template",
     "body": [
       "import { LitElement, html, css } from 'lit';",
-      "import { customElement, property } from 'lit/decorators'",
+      "import { customElement, property } from 'lit/decorators.js'",
       "",
       "@customElement('${TM_FILENAME_BASE}')",
       "export class ${TM_FILENAME_BASE/([a-z]*)(-)?/${1:/capitalize}/g} extends LitElement {",
