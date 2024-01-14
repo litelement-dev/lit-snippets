@@ -32,7 +32,13 @@
       "\t\treturn html`${0}`;",
       "\t}",
       "}",
-      ""
+      "",
+      "declare global {",
+      "\tinterface HTMLElementTagNameMap {",
+      "\t\t'${TM_FILENAME_BASE}': ${TM_FILENAME_BASE/([a-z]*)(-)?/${1:/capitalize}/g};",
+      "\t}",
+      "}",
+      "",
     ],
     "description": "New LitElement subclass with lit-html"
   },
