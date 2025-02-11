@@ -1,6 +1,6 @@
 {
     "name": "lit-snippets",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "displayName": "Lit Snippets",
     "description": "Lit Snippets for VS Code",
     "categories": [
@@ -58,9 +58,10 @@
     },
     "homepage": "https://github.com/litelement-dev/lit-snippets#readme",
     "devDependencies": {
-        "vsce": "^2.15.0"
+        "@vscode/vsce": "^3.2.2"
     },
     "scripts": {
+        "pack": "vsce package",
         "dist": "vsce publish"
     }
 }

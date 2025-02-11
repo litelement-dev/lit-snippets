@@ -13,7 +13,7 @@
     "description": "New LitElement subclass"
   },
   "Create LitElement Component With lit-html": {
-    "prefix": "lit template",
+    "prefix": "littemplate",
     "body": [
       "import { LitElement, html, css } from 'lit';",
       "",
@@ -38,7 +38,7 @@
   "Generate LitElement Property in Javascript": {
     "scope": "javascript",
     "prefix": [
-      "property"
+      "litprop"
     ],
     "body": [
       "${1:propName}: { type: ${2|String,Number,Boolean,Array,Object|} },${0}"
@@ -47,8 +47,8 @@
   },
   "Generate LitElement Properties": {
     "prefix": [
-      "litprop",
-      "properties"
+      "litprops",
+      "props"
     ],
     "body": [
       "static get properties() {",

@@ -14,22 +14,22 @@ Lit snippets for Visual Studio Code.
 
 ## Features
 
--   Supports both JavaScript and TypeScript with Lit 2.0
+-   Supports both JavaScript and TypeScript with Lit 3
 
 ## List
 
 ### Element and Its Property Snippets
 
-| Trigger        | Snippet                                                      |
-| -------------- | ------------------------------------------------------------ |
-| litbase        | Create LitElement subclasss                                  |
-| lit template   | Create LitElement subclasss with styles and render fn        |
-| litprop        | Generate property                                            |
-| litquery       | Generate @query property                                     |
-| litqueryall    | Generate @queryall property                                  |
-| litrender      | Generate render function with lit-html                       |
-| litstyles      | Generate `styles` static property                            |
-| ctlit template | Create @conectate/ct-lit subclasss with styles and render fn |
+| Trigger       | Snippet                                                      |
+| ------------- | ------------------------------------------------------------ |
+| litbase       | Create LitElement subclasss                                  |
+| littemplate   | Create LitElement subclasss with styles and render fn        |
+| litprop       | Generate property                                            |
+| litquery      | Generate @query property                                     |
+| litqueryall   | Generate @queryall property                                  |
+| litrender     | Generate render function with lit-html                       |
+| litstyles     | Generate `styles` static property                            |
+| ctlittemplate | Create @conectate/ct-lit subclasss with styles and render fn |
 
 ### Event Related Snippets
 
@@ -56,7 +56,7 @@ Lit snippets for Visual Studio Code.
 
 ## Contact
 
-Issues [issues](https://github.com/litelement-dev/lit-snippet/issues) or for any features, please tweet us [@herberthobregon](https://twitter.com/herberthobregon).
+Issues [issues](https://github.com/litelement-dev/lit-snippet/issues) or for any features, please tweet us [@herberthobregon](https://x.com/herberthobregon).
 
 ## License
 

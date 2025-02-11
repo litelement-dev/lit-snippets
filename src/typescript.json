@@ -2,7 +2,7 @@
   "Create LitElement Component": {
     "prefix": "litbase",
     "body": [
-      "import { LitElement, customElement } from 'lit-element';",
+      "import { LitElement, customElement } from 'lit';",
       "",
       "@customElement('${TM_FILENAME_BASE}')",
       "export class ${TM_FILENAME_BASE/([a-z]*)(-)?/${1:/capitalize}/g} extends LitElement {",
@@ -13,10 +13,10 @@
     "description": "New LitElement subclass"
   },
   "Create LitElement Component With lit-html": {
-    "prefix": "lit template",
+    "prefix": "littemplate",
     "body": [
       "import { LitElement, html, css } from 'lit';",
-      "import { customElement, property } from 'lit/decorators.js'",
+      "import { customElement, property, state } from 'lit/decorators.js'",
       "",
       "@customElement('${TM_FILENAME_BASE}')",
       "export class ${TM_FILENAME_BASE/([a-z]*)(-)?/${1:/capitalize}/g} extends LitElement {",
@@ -44,26 +44,31 @@
   },
 
   "Create @conectate/ct-lit Component": {
-    "prefix": "ctlit template",
+    "prefix": "ctlittemplate",
     "body": [
-      "import { CtLit, html, css, customElement, property } from '@conectate/ct-lit';",
+		  "import { CtLit, html, css, customElement, property, state } from '@conectate/ct-lit';",
+		  "",
+		  "@customElement('${TM_FILENAME_BASE}')",
+		  "export class ${TM_FILENAME_BASE/([a-z]*)(-)?/${1:/capitalize}/g} extends CtLit {",
+		  "\tstatic styles = [",
+		  "\t\tcss`",
+		  "\t\t\t:host {",
+		  "\t\t\t\tdisplay: block;",
+		  "\t\t\t}",
+		  "\t\t`",
+		  "\t];",
+		  "",
+		  "\trender() {",
+		  "\t\treturn html`${0}`;",
+		  "\t}",
+		  "}",
       "",
-      "@customElement('${TM_FILENAME_BASE}')",
-      "export class ${TM_FILENAME_BASE/([a-z]*)(-)?/${1:/capitalize}/g} extends CtLit {",
-      "\tstatic styles = [",
-      "\t\tcss`",
-      "\t\t\t:host {",
-      "\t\t\t\tdisplay: block;",
-      "\t\t\t}",
-      "\t\t`",
-      "\t];",
-      "",
-      "\trender() {",
-      "\t\treturn html`${0}`;",
+      "declare global {",
+      "\tinterface HTMLElementTagNameMap {",
+      "\t\t'${TM_FILENAME_BASE}': ${TM_FILENAME_BASE/([a-z]*)(-)?/${1:/capitalize}/g};",
       "\t}",
       "}",
-      ""
-    ],
+		],
     "description": "New CtLit subclass"
   },
   "Generate LitElement Property": {
@@ -71,16 +76,25 @@
       "litprop"
     ],
     "body": [
-      "@property({ type: ${1|String,Number,Boolean,Array,Object|} }) ${2:propName}: ${3:any};${0}"
+      "@property({ type: ${1|String,Number,Boolean,Array,Object|} }) public ${2:propName}: ${3:any};${0} = ${4:defaultValue};"
     ],
     "description": "Generate LitElement Property"
+  },
+  "Generate LitElement State": {
+    "prefix": [
+      "litstate"
+    ],
+    "body": [
+      "@state() private ${2:propName}: ${3:any};${0} = ${4:defaultValue};"
+    ],
+    "description": "Generate LitElement State"
   },
   "Generate Element Query Property": {
     "prefix": [
       "litquery"
     ],
     "body": [
-      "@query('${1:queryString}') ${2:propName}: ${3:HTMLElement};${0}"
+      "@query('${1:queryString}') ${2:propName}?: ${3:HTMLElement};${0}"
     ],
     "description": "Generate Element Query Property"
   },
@@ -89,7 +103,7 @@
       "litqueryall"
     ],
     "body": [
-      "@queryAll('${1:queryString}') ${2:propName}: NodeListOf<${3:HTMLElement}>;${0}"
+      "@queryAll('${1:queryString}') ${2:propName}!: NodeListOf<${3:HTMLElement}>;${0}"
     ],
     "description": "Generate Elements Query Property"
   },
