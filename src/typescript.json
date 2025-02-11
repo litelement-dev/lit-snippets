@@ -15,10 +15,10 @@
   "Create LitElement Component With lit-html": {
     "prefix": "littemplate",
     "body": [
-      "import { LitElement, html, css } from 'lit';",
-      "import { customElement, property, state } from 'lit/decorators.js'",
+      "import { LitElement, html, css } from \"lit\";",
+      "import { customElement, property, state } from \"lit/decorators.js\"",
       "",
-      "@customElement('${TM_FILENAME_BASE}')",
+      "@customElement(\"${TM_FILENAME_BASE}\")",
       "export class ${TM_FILENAME_BASE/([a-z]*)(-)?/${1:/capitalize}/g} extends LitElement {",
       "\tstatic styles = [",
       "\t\tcss`",
@@ -35,7 +35,7 @@
       "",
       "declare global {",
       "\tinterface HTMLElementTagNameMap {",
-      "\t\t'${TM_FILENAME_BASE}': ${TM_FILENAME_BASE/([a-z]*)(-)?/${1:/capitalize}/g};",
+      "\t\t\"${TM_FILENAME_BASE}\": ${TM_FILENAME_BASE/([a-z]*)(-)?/${1:/capitalize}/g};",
       "\t}",
       "}",
       ""
@@ -46,9 +46,9 @@
   "Create @conectate/ct-lit Component": {
     "prefix": "ctlittemplate",
     "body": [
-		  "import { CtLit, html, css, customElement, property, state } from '@conectate/ct-lit';",
+		  "import { CtLit, html, css, customElement, property, state } from \"@conectate/ct-lit\";",
 		  "",
-		  "@customElement('${TM_FILENAME_BASE}')",
+		  "@customElement(\"${TM_FILENAME_BASE}\")",
 		  "export class ${TM_FILENAME_BASE/([a-z]*)(-)?/${1:/capitalize}/g} extends CtLit {",
 		  "\tstatic styles = [",
 		  "\t\tcss`",
@@ -65,9 +65,9 @@
       "",
       "declare global {",
       "\tinterface HTMLElementTagNameMap {",
-      "\t\t'${TM_FILENAME_BASE}': ${TM_FILENAME_BASE/([a-z]*)(-)?/${1:/capitalize}/g};",
+      "\t\t\"${TM_FILENAME_BASE}\": ${TM_FILENAME_BASE/([a-z]*)(-)?/${1:/capitalize}/g};",
       "\t}",
-      "}",
+      "}"
 		],
     "description": "New CtLit subclass"
   },
