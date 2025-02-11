@@ -58,9 +58,10 @@
     },
     "homepage": "https://github.com/litelement-dev/lit-snippets#readme",
     "devDependencies": {
-        "vsce": "^2.15.0"
+        "@vscode/vsce": "^3.2.2"
     },
     "scripts": {
+        "pack": "vsce package",
         "dist": "vsce publish"
     }
 }
