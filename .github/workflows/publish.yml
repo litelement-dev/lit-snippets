@@ -39,7 +39,7 @@ jobs:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
 
       - name: Publish to Open VSX
-        run: pnpx -y ovsx publish lit-snippets.vsix
+        run: pnpx ovsx publish lit-snippets.vsix
         env:
           OVSX_PAT: ${{ secrets.OVSX_PAT }}
 
