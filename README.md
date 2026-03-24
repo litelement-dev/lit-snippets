@@ -20,16 +20,16 @@ Lit snippets for Visual Studio Code.
 
 ### Element and Its Property Snippets
 
-| Trigger       | Snippet                                                      |
-| ------------- | ------------------------------------------------------------ |
-| litbase       | Create LitElement subclasss                                  |
-| littemplate   | Create LitElement subclasss with styles and render fn        |
-| litprop       | Generate property                                            |
-| litquery      | Generate @query property                                     |
-| litqueryall   | Generate @queryall property                                  |
-| litrender     | Generate render function with lit-html                       |
-| litstyles     | Generate `styles` static property                            |
-| ctlittemplate | Create @conectate/ct-lit subclasss with styles and render fn |
+| Trigger       | Snippet                                                                 |
+| ------------- | ----------------------------------------------------------------------- |
+| litbase       | Create LitElement subclasss                                             |
+| littemplate   | Create LitElement subclasss with styles and render fn                   |
+| litprop       | Generate property                                                       |
+| litquery      | Generate @query property                                                |
+| litqueryall   | Generate @queryall property                                             |
+| litrender     | Generate render function with lit-html                                  |
+| litstyles     | Generate `styles` static property                                       |
+| ctlittemplate | Create @conectate/components/ct-lit subclasss with styles and render fn |
 
 ### Event Related Snippets
 

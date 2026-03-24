@@ -1,0 +1,50 @@
+name: Publish Extension
+
+on:
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+"
+  workflow_dispatch: # Allows manual triggering from the GitHub Actions tab
+
+jobs:
+  publish:
+    name: Build, Publish and Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed to create a GitHub Release
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: "pnpm"
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Package Extension
+        run: pnpm exec vsce package -o lit-snippets.vsix
+
+      - name: Publish to Visual Studio Marketplace
+        run: pnpm exec vsce publish --packagePath lit-snippets.vsix
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+
+      - name: Publish to Open VSX
+        run: pnpx -y ovsx publish lit-snippets.vsix
+        env:
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: lit-snippets.vsix
+          generate_release_notes: true

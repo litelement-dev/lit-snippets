@@ -1,6 +1,6 @@
 {
     "name": "lit-snippets",
-    "version": "1.0.4",
+    "version": "2.0.0",
     "displayName": "Lit Snippets",
     "description": "Lit Snippets for VS Code",
     "categories": [
@@ -62,6 +62,7 @@
     },
     "scripts": {
         "pack": "vsce package",
+        "build": "vsce package -o lit-snippets-v$npm_package_version.vsix",
         "dist": "vsce publish"
     }
 }
